@@ -25,6 +25,17 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>4.2.2</muleVersion>
+				      <server>anypoint-exchange-v2</server>
+				      <applicationName>june20simpleordermgmt</applicationName>
+				      <environment>Sandbox</environment>
+				      <region>ap-southeast-1</region>
+				      <workers>1</workers>
+				      <workerType>Micro</workerType>
+				      <objectStoreV2>true</objectStoreV2>
+				    </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
