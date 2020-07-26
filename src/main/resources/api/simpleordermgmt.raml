@@ -1,0 +1,49 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/6ed6f278-84d8-42a7-8572-5602d7adf83a/ # 
+title: SimpleOrderMgmt
+
+types:
+  OrderType:
+    type: object
+    properties:
+      orderid:  string
+      productname: string
+      count:  integer
+      unitprice:  number
+      totalprice: number
+
+/order:
+  get:
+    queryParameters:
+      orderid : string
+    responses:
+      200:
+        body:
+          application/json:
+            type: OrderType
+            example: {
+              "orderid": "aaa",
+              productname: "aaa",
+              count: 111,
+              totalprice: 111,
+              unitprice: 111
+            }
+  post:
+    body:
+      application/json:
+        type: OrderType
+        example: {
+          "orderid" : "bb",
+          productname: "bb",
+          count: 11,
+          totalprice: 11,
+          unitprice: 11
+        }
+    responses:
+      201:
+        body:
+          application/json:
+            type: string
+            example:
+              "Succcess"    
+          
