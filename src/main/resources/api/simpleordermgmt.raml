@@ -22,7 +22,7 @@ types:
           application/json:
             type: OrderType
             example: {
-              "orderid": "aaa",
+              "orderid": "aaakkk",
               productname: "aaa",
               count: 111,
               totalprice: 111,
@@ -45,5 +45,20 @@ types:
           application/json:
             type: string
             example:
-              "Succcess"    
-          
+              "Succcess"       
+
+  /{orderid}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: OrderType
+              example:
+                {
+                  "orderid" : "bb",
+                  productname: "bb",
+                  count: 11,
+                  totalprice: 11,
+                  unitprice: 11
+                }
